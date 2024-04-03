@@ -93,7 +93,7 @@ class Kendaraan {
                 default:
                     System.out.println("Pilihan tidak valid!");
             }
-        } while (choice != 9);
+        } while (choice != 5);
         scanner.close();
     }
 }
@@ -106,12 +106,10 @@ class Bus extends Kendaraan {
         this.tipeBus = tipeBus;
     }
 
-    @Override
     void kapasitas() {
         System.out.println("Kapasitas Bus: 30");
     }
 
-    @Override
     void penumpangNaik(int naik) {
         if (jumlahPenumpang + naik > 30) {
             Scanner scanner = new Scanner(System.in);
@@ -151,12 +149,10 @@ class Truk extends Kendaraan {
         this.TipeTruk = TipeTruk;
     }
 
-    @Override
     void kapasitas() {
         System.out.println("Kapasitas Truk: 30");
     }
 
-    @Override
     void penumpangNaik(int naik) {
         if (jumlahPenumpang + naik > 30) {
             Scanner scanner = new Scanner(System.in);
@@ -171,7 +167,7 @@ class Truk extends Kendaraan {
             switch (choice) {
                 case 1:
                     System.out.println("Semua penumpang ditolak");
-                    jumlahPenumpang = sisa;
+                    jumlahPenumpang = 30-sisa;
                     break;
                 case 2:
                     System.out.println("Menerima sebagian penumpang");
